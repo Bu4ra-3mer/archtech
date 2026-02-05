@@ -24,7 +24,7 @@ class OnboardingSlides extends StatelessWidget {
     return Stack(
       fit: StackFit.expand,
       children: [
-        Positioned.fill(child: Image.asset(image, fit: BoxFit.cover)),
+        Image.asset(image, fit: BoxFit.cover),
 
         OnboardingBottomSheet(
           description: description,
@@ -33,9 +33,7 @@ class OnboardingSlides extends StatelessWidget {
           onNext: onNext,
           onSkip: onSkip,
         ),
-       ],
+      ],
     );
   }
 }
-
-

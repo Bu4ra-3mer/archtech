@@ -1,5 +1,7 @@
+import 'package:archtech/features/auth/presentation/views/sign_up_view.dart';
 import 'package:archtech/features/on_boarding/presentation/views/onboarding_view.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -10,18 +12,13 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
+  
   @override
   void initState() {
     super.initState();
-    
-    
-    Future.delayed(const Duration(seconds: 5), () {
-      if (mounted) {  
-        Navigator.pushReplacementNamed(context, OnboardingView.id);
-       
-      }
-    });
+    _navigateToNext();
   }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,5 +104,17 @@ class _SplashViewState extends State<SplashView> {
         ],
       ),
     );
+  }
+  void _navigateToNext() async {
+    await Future.delayed(const Duration(seconds: 3)); 
+    if (!mounted) return;
+    final prefs = await SharedPreferences.getInstance();
+    bool isSeen = prefs.getBool('onboarding_seen') ?? false;
+
+    if (isSeen) {
+      Navigator.pushReplacementNamed(context, SignUpView.id);
+    } else {
+      Navigator.pushReplacementNamed(context, OnboardingView.id);
+    }
   }
 }

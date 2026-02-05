@@ -17,7 +17,9 @@ class OnboardingActions extends StatelessWidget {
   Widget build(BuildContext context) {
     if (isLast) {
       return ElevatedButton(
-        onPressed: onNext,
+        onPressed:
+         onNext
+         ,
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primary,
           minimumSize: const Size(350, 60),

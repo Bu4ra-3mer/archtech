@@ -19,6 +19,15 @@ dependencies:
   
   cupertino_icons: ^1.0.8
   cached_network_image: ^3.4.1
+  url_launcher: ^6.3.2
+  freezed: ^3.2.3
+  flutter_bloc: ^9.1.1
+  build_runner: ^2.10.5
+  shared_preferences: ^2.5.3
+  get_it: ^9.2.0
+  injectable: ^2.7.1+4
+  equatable: ^2.0.8
+  json_serializable: ^6.11.2
 
 dev_dependencies:
   flutter_test:
@@ -35,6 +44,8 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/signin/
+    - assets/images/forgot_password/
 
   fonts:
     - family: Montserrat
